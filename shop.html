@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Al-Matiri Fiber Glass — Shop Details</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Language selection toggle (same modal as index.html) -->
+  <div id="langModal" class="lang-modal">
+    <div class="lang-modal-content">
+      <h2>Select Language | اختر اللغة</h2>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="ar">العربية</button>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="brand"><a href="index.html" data-en="Al-Matiri Fiber Glass" data-ar="أل-مطيري للألياف الزجاجية">Al-Matiri Fiber Glass</a></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item" data-en="Home" data-ar="الرئيسية">Home</a></li>
+      <li><a href="index.html#about" class="nav-item" data-en="About" data-ar="من نحن">About</a></li>
+      <li><a href="shop.html" class="nav-item active" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a></li>
+      <li><a href="products.html" class="nav-item" data-en="Products" data-ar="المنتجات">Products</a></li>
+      <li><a href="contact.html" class="nav-item" data-en="Contact & Location" data-ar="اتصل & الموقع">Contact & Location</a></li>
+    </ul>
+    <button class="hamburger" aria-label="menu">☰</button>
+  </nav>
+
+  <header class="page-header">
+    <h1 data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</h1>
+    <p class="muted" data-en="Click any image to view enlarged. Use arrows to navigate the sequence."
+       data-ar="انقر على أي صورة لعرضها بحجم أكبر. استخدم الأسهم للتنقل بين الصور.">
+      Click any image to view enlarged. Use arrows to navigate the sequence.
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="card gallery">
+      <div class="gallery-grid">
+        <!-- Shop images in proper sequence -->
+        <img data-index="0" src="images/shop2.jpg.jpg" alt="shop2" class="gallery-item" />
+        <img data-index="1" src="images/shop3.jpg.jpg" alt="shop3" class="gallery-item" />
+        <img data-index="2" src="images/shop4.jpg.jpg" alt="shop4" class="gallery-item" />
+        <img data-index="3" src="images/shop5.jpg.jpg" alt="shop5" class="gallery-item" />
+        <img data-index="4" src="images/shop6.jpg.jpg" alt="shop6" class="gallery-item" />
+        <img data-index="5" src="images/shop7.jpg.jpg" alt="shop7" class="gallery-item" />
+        <img data-index="6" src="images/shop8.jpg.jpg" alt="shop8" class="gallery-item" />
+        <img data-index="7" src="images/shop9.jpg.jpg" alt="shop9" class="gallery-item" />
+        <img data-index="8" src="images/shop10.jpg.jpg" alt="shop10" class="gallery-item" />
+        <img data-index="9" src="images/shop11.jpg.jpg" alt="shop11" class="gallery-item" />
+        <img data-index="10" src="images/shop12.jpg.jpg" alt="shop12" class="gallery-item" />
+        <img data-index="11" src="images/shop13.jpg.jpg" alt="shop13" class="gallery-item" />
+        <img data-index="12" src="images/shop14.jpg.jpg" alt="shop14" class="gallery-item" />
+      </div>
+
+      <div class="center">
+        <a class="btn" href="index.html" data-en="⬅ Back to Home" data-ar="⬅ العودة إلى الرئيسية">⬅ Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong> <a href="tel:0502511885">0502511885</a>
+    </div>
+    <div data-en="Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St."
+         data-ar="الموقع: جدة، حي الربوة، شارع الثلاثين، بالقرب من شارع الستين">
+      Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St.
+    </div>
+  </footer>
+
+  <!-- Lightbox for zoomable images -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="close">✕</button>
+    <button class="lb-prev" aria-label="previous">◀</button>
+    <img id="lb-image" src="" alt="enlarged" />
+    <button class="lb-next" aria-label="next">▶</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Language toggle script (same as index)
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('langModal');
+      const langButtons = document.querySelectorAll('.lang-btn');
+
+      modal.style.display = 'flex';
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang');
+          document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+          });
+          modal.style.display = 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
