@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>المطيري للفيبر جلاس - Jeddah</title>
+  <title>المطيري للفيبر جلاس - Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Language Selection Modal -->
+  <!-- Language Modal -->
   <div class="lang-modal" id="langModal">
     <div class="lang-modal-content">
       <h2>Choose Language</h2>
@@ -18,62 +18,47 @@
 
   <!-- Navbar -->
   <nav class="nav">
-    <div class="brand"><a href="#">المطيري للفيبر جلاس</a></div>
+    <div class="brand"><a href="index.html">المطيري للفيبر جلاس</a></div>
     <ul class="nav-links">
-      <li><a class="nav-item active" href="#">Home</a></li>
+      <li><a class="nav-item active" href="index.html">Home</a></li>
       <li><a class="nav-item" href="#about">About</a></li>
-      <li><a class="nav-item" href="#contact">Contact</a></li>
+      <li><a class="nav-item" href="products.html">Products</a></li>
+      <li><a class="nav-item" href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
-      <h1 id="heroTitle">Welcome to Al-Mutairi Fiberglass</h1>
-      <p id="heroDesc">
-        Specialists in fiberglass products in Jeddah. Quality, durability, and craftsmanship since 1990.
-      </p>
-    </div>
-    <div class="center-images">
-      <img src="images/fiberglass1.jpg" alt="fiberglass" />
-      <img src="images/fiberglass2.jpg" alt="fiberglass" />
+      <h1 id="heroTitle">Al-Mutairi Fiberglass Jeddah</h1>
+      <p id="heroDesc">High quality fiberglass manufacturing and installation services in Jeddah. Trusted since 1990.</p>
+      <div class="hero-cta">
+        <a href="products.html" class="btn">See Products</a>
+        <a href="#about" class="btn ghost">Learn More</a>
+      </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="gallery container">
-    <div class="page-header">
-      <h1 id="galleryTitle">Our Work</h1>
-      <p class="muted" id="galleryDesc">Some of our recent fiberglass projects.</p>
+  <!-- 2 Featured Images -->
+  <section class="center-images">
+    <div>
+      <img src="images/tank.jpg" alt="Fiberglass Tanks" />
+      <p class="img-caption">Fiberglass Water Tanks</p>
     </div>
-    <div class="gallery-grid">
-      <img src="images/work1.jpg" class="gallery-item" alt="">
-      <img src="images/work2.jpg" class="gallery-item" alt="">
-      <img src="images/work3.jpg" class="gallery-item" alt="">
-      <img src="images/work4.jpg" class="gallery-item" alt="">
+    <div>
+      <img src="images/swimmingpool.jpg" alt="Swimming Pools" />
+      <p class="img-caption">Fiberglass Swimming Pools</p>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="container contact-page">
-    <div class="contact-card card">
-      <h2 id="contactTitle">Contact Us</h2>
-      <p>📍 Jeddah, حي الربوة شارع الثلاثين قريب شارع الستين</p>
-      <p>📞 +966 555 123 456</p>
-      <a href="https://goo.gl/maps/QkK2YfFZ3h12" target="_blank" class="btn">
-        View Larger Map
-      </a>
-    </div>
-
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.066086179317!2d39.18866860969229!3d21.60561419672867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d0461234abcd%3A0x56789ef12345abcd!2z2KfYsdiq2KfZhNmH2K_YjCDYtdix2YjYqtmI2KjYoSDYp9mE2LnZhNin2YTYp9mE2KfZhQ!5e0!3m2!1sar!2ssa!4v1690000000000"
-        width="100%"
-        height="350"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-    </div>
+  <!-- About Section -->
+  <section id="about" class="container card">
+    <h2>About Us</h2>
+    <p>
+      Al-Mutairi Fiberglass is one of the leading fiberglass companies in Jeddah.  
+      We specialize in manufacturing and installing fiberglass tanks, swimming pools, and custom products.  
+      Our skilled team ensures the best durability and finishing for every project.
+    </p>
   </section>
 
   <!-- Footer -->
@@ -85,4 +70,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
