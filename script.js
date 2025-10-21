@@ -1,74 +1,43 @@
-// ===== Lightbox + Zoom for Shop & Products =====
-(() => {
-  const lightbox = document.createElement('div');
-  lightbox.id = 'custom-lightbox';
-  lightbox.style.cssText = `
-    display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); 
-    justify-content:center; align-items:center; z-index:9999; overflow:auto;
-  `;
-  lightbox.innerHTML = `
-    <img id="lb-img" style="max-width:90%; max-height:90%; cursor:zoom-in; border-radius:8px; transition:transform 0.3s;">
-    <button id="lb-close" style="position:fixed;top:20px;right:20px;font-size:24px;color:#fff;background:transparent;border:none;cursor:pointer;">✕</button>
-    <button id="lb-prev" style="position:fixed;left:20px;top:50%;transform:translateY(-50%);font-size:32px;color:#fff;background:transparent;border:none;cursor:pointer;">◀</button>
-    <button id="lb-next" style="position:fixed;right:20px;top:50%;transform:translateY(-50%);font-size:32px;color:#fff;background:transparent;border:none;cursor:pointer;">▶</button>
-  `;
-  document.body.appendChild(lightbox);
+// Language Selection (runs once)
+window.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("langModal");
+  const savedLang = localStorage.getItem("selectedLang");
 
-  let images = [];
-  let currentIndex = 0;
-  let zoomed = false;
+  if (!savedLang) {
+    modal.style.display = "flex";
+  } else {
+    applyLanguage(savedLang);
+  }
+});
 
-  const lbImg = document.getElementById('lb-img');
-  const lbClose = document.getElementById('lb-close');
-  const lbPrev = document.getElementById('lb-prev');
-  const lbNext = document.getElementById('lb-next');
+function selectLanguage(lang) {
+  localStorage.setItem("selectedLang", lang);
+  applyLanguage(lang);
+  document.getElementById("langModal").style.display = "none";
+}
 
-  const openLightbox = (index) => {
-    images = Array.from(document.querySelectorAll('.gallery-item, .thumb'));
-    currentIndex = index;
-    lbImg.src = images[currentIndex].src;
-    lbImg.style.transform = 'scale(1)';
-    zoomed = false;
-    lightbox.style.display = 'flex';
-  };
+function applyLanguage(lang) {
+  const isArabic = lang === "ar";
 
-  const closeLightbox = () => { lightbox.style.display = 'none'; zoomed=false; lbImg.style.transform='scale(1)'; };
+  document.body.dir = isArabic ? "rtl" : "ltr";
 
-  const showPrev = () => { currentIndex = (currentIndex-1+images.length)%images.length; lbImg.src = images[currentIndex].src; lbImg.style.transform='scale(1)'; zoomed=false; };
-  const showNext = () => { currentIndex = (currentIndex+1)%images.length; lbImg.src = images[currentIndex].src; lbImg.style.transform='scale(1)'; zoomed=false; };
+  document.getElementById("heroTitle").textContent = isArabic
+    ? "مرحباً بكم في المطيري للفيبر جلاس"
+    : "Welcome to Al-Mutairi Fiberglass";
 
-  lbClose.addEventListener('click', closeLightbox);
-  lbPrev.addEventListener('click', showPrev);
-  lbNext.addEventListener('click', showNext);
+  document.getElementById("heroDesc").textContent = isArabic
+    ? "نحن متخصصون في منتجات الفيبر جلاس بجدة منذ عام 1990."
+    : "Specialists in fiberglass products in Jeddah since 1990.";
 
-  lbImg.addEventListener('click', () => {
-    zoomed = !zoomed;
-    lbImg.style.transform = zoomed ? 'scale(2)' : 'scale(1)';
-    lbImg.style.cursor = zoomed ? 'zoom-out' : 'zoom-in';
-  });
+  document.getElementById("galleryTitle").textContent = isArabic
+    ? "أعمالنا"
+    : "Our Work";
 
-  document.addEventListener('keydown', (e) => {
-    if(lightbox.style.display==='flex'){
-      if(e.key==='ArrowLeft') showPrev();
-      if(e.key==='ArrowRight') showNext();
-      if(e.key==='Escape') closeLightbox();
-    }
-  });
+  document.getElementById("galleryDesc").textContent = isArabic
+    ? "بعض من مشاريعنا الحديثة."
+    : "Some of our recent projects.";
 
-  lightbox.addEventListener('click', (e) => { if(e.target===lightbox) closeLightbox(); });
-
-  // Attach click event to all gallery items
-  const attachGallery = () => {
-    const allImages = document.querySelectorAll('.gallery-item, .thumb');
-    allImages.forEach((img, i) => {
-      if(!img.dataset.lb){ // attach only once
-        img.dataset.lb = 'true';
-        img.addEventListener('click', () => openLightbox(i));
-      }
-    });
-  };
-
-  attachGallery();
-  // Observe DOM changes (optional)
-  new MutationObserver(attachGallery).observe(document.body, {childList:true, subtree:true});
-})();
+  document.getElementById("contactTitle").textContent = isArabic
+    ? "اتصل بنا"
+    : "Contact Us";
+}
