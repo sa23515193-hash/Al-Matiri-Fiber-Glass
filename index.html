@@ -1,112 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Al-Matiri Fiber Glass — Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المطيري للفيبر جلاس - Jeddah</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Language selection toggle -->
-  <div id="langModal" class="lang-modal">
+  <!-- Language Selection Modal -->
+  <div class="lang-modal" id="langModal">
     <div class="lang-modal-content">
-      <h2>Select Language | اختر اللغة</h2>
-      <button class="lang-btn" data-lang="en">English</button>
-      <button class="lang-btn" data-lang="ar">العربية</button>
+      <h2>Choose Language</h2>
+      <button class="lang-btn" onclick="selectLanguage('en')">English</button>
+      <button class="lang-btn" onclick="selectLanguage('ar')">العربية</button>
     </div>
   </div>
 
+  <!-- Navbar -->
   <nav class="nav">
-    <div class="brand"><a href="index.html" data-en="Al-Matiri Fiber Glass" data-ar="أل-مطيري للألياف الزجاجية">Al-Matiri Fiber Glass</a></div>
+    <div class="brand"><a href="#">المطيري للفيبر جلاس</a></div>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-item active" data-en="Home" data-ar="الرئيسية">Home</a></li>
-      <li><a href="index.html#about" class="nav-item" data-en="About" data-ar="من نحن">About</a></li>
-      <li><a href="shop.html" class="nav-item" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a></li>
-      <li><a href="products.html" class="nav-item" data-en="Products" data-ar="المنتجات">Products</a></li>
-      <li><a href="contact.html" class="nav-item" data-en="Contact & Location" data-ar="اتصل & الموقع">Contact & Location</a></li>
+      <li><a class="nav-item active" href="#">Home</a></li>
+      <li><a class="nav-item" href="#about">About</a></li>
+      <li><a class="nav-item" href="#contact">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="menu">☰</button>
   </nav>
 
-<!-- Home Page Highlights -->
-<section class="card home-images">
-  <div class="home-top-grid">
-    <!-- Left side text -->
-    <div class="home-text">
-      <h1 data-en="Welcome to Al-Matiri Fiber Glass" data-ar="مرحبا بكم في أل-مطيري للألياف الزجاجية">
-        Welcome to Al-Matiri Fiber Glass
-      </h1>
-      <p data-en="Your place for best quality, designing, unique and imported high quality fiberglass. Al Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 25 years, we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness."
-         data-ar="مكانك للحصول على أفضل جودة وتصاميم فريدة وألياف زجاجية مستوردة عالية الجودة. أل-مطيري للألياف الزجاجية هو اسم موثوق في منتجات الألياف الزجاجية عالية الجودة. لأكثر من 25 عامًا، نقوم بتصنيع وبيع وإصلاح عناصر الألياف الزجاجية — معروفة بالقوة وطول العمر والتكلفة المعقولة.">
-        Your place for best quality, designing, unique and imported high quality fiberglass. Al Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 25 years, we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness.
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1 id="heroTitle">Welcome to Al-Mutairi Fiberglass</h1>
+      <p id="heroDesc">
+        Specialists in fiberglass products in Jeddah. Quality, durability, and craftsmanship since 1990.
       </p>
-      <div class="hero-cta">
-        <a class="btn" href="shop.html" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a>
-        <a class="btn ghost" href="products.html" data-en="See Products" data-ar="عرض المنتجات">See Products</a>
-      </div>
     </div>
-</section>
-
-   <main class="container">
-    <section id="about" class="card about-card">
-      <div class="about-grid">
-        <div>
-          <h2 data-en="About Us" data-ar="من نحن">About Us</h2>
-          <p data-en="Al-Matiri Fiber Glass has served customers across Jeddah and beyond. We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. Our team focuses on durable design and affordable prices."
-             data-ar="أل-مطيري للألياف الزجاجية خدم العملاء في جدة وما حولها. نحن نصنع ونزود برك وأحواض وتركيبات مخصصة من الألياف الزجاجية. يركز فريقنا على تصميم متين وأسعار معقولة.">
-            Al-Matiri Fiber Glass has served customers across Jeddah and beyond. We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. Our team focuses on durable design and affordable prices.
-          </p>
-          <ul class="bullets">
-            <li data-en="25+ years experience" data-ar="أكثر من 25 عامًا من الخبرة">25+ years experience</li>
-            <li data-en="Manufacturing • Repair • Installation" data-ar="تصنيع • إصلاح • تركيب">Manufacturing • Repair • Installation</li>
-            <li data-en="Custom orders accepted" data-ar="طلبات مخصصة مقبولة">Custom orders accepted</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Right side images stacked -->
-    <div class="home-owner-shop">
-      <!-- Papa's pic -->
-      <div class="owner-img">
-        <img src="images/home1.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic" />
-        <p class="owner-text">Owner: Ejaz Ahmed</p>
+    <div class="center-images">
+      <img src="images/fiberglass1.jpg" alt="fiberglass" />
+      <img src="images/fiberglass2.jpg" alt="fiberglass" />
     </div>
-    <div class="home-owner-shop">
-      <!-- Papa's pic -->
-      <div class="owner-img">
-        <img src="images/home2.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic" />
-        <p class="owner-text">Owner: Ejaz Ahmed</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery container">
+    <div class="page-header">
+      <h1 id="galleryTitle">Our Work</h1>
+      <p class="muted" id="galleryDesc">Some of our recent fiberglass projects.</p>
     </div>
-    </section>
+    <div class="gallery-grid">
+      <img src="images/work1.jpg" class="gallery-item" alt="">
+      <img src="images/work2.jpg" class="gallery-item" alt="">
+      <img src="images/work3.jpg" class="gallery-item" alt="">
+      <img src="images/work4.jpg" class="gallery-item" alt="">
+    </div>
+  </section>
 
-  </main>
+  <!-- Contact Section -->
+  <section id="contact" class="container contact-page">
+    <div class="contact-card card">
+      <h2 id="contactTitle">Contact Us</h2>
+      <p>📍 Jeddah, حي الربوة شارع الثلاثين قريب شارع الستين</p>
+      <p>📞 +966 555 123 456</p>
+      <a href="https://goo.gl/maps/QkK2YfFZ3h12" target="_blank" class="btn">
+        View Larger Map
+      </a>
+    </div>
 
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.066086179317!2d39.18866860969229!3d21.60561419672867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d0461234abcd%3A0x56789ef12345abcd!2z2KfYsdiq2KfZhNmH2K_YjCDYtdix2YjYqtmI2KjYoSDYp9mE2LnZhNin2YTYp9mE2KfZhQ!5e0!3m2!1sar!2ssa!4v1690000000000"
+        width="100%"
+        height="350"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
-    <div>
-      <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong> <a href="tel:0502511885">0502511885</a>
-    </div>
-    <div>© Al-Matiri Fiber Glass</div>
+    <span>&copy; 2025 المطيري للفيبر جلاس</span>
+    <a href="#">Back to top ↑</a>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // Language toggle
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('langModal');
-      const langButtons = document.querySelectorAll('.lang-btn');
-
-      modal.style.display = 'flex';
-
-      langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const lang = btn.getAttribute('data-lang');
-          document.querySelectorAll('[data-en]').forEach(el => {
-            el.textContent = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-          });
-          modal.style.display = 'none';
-        });
-      });
-    });
-  </script>
 </body>
 </html>
+
