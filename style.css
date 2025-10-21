@@ -13,6 +13,65 @@ body{
   background: linear-gradient(90deg,var(--bg1),var(--bg2),var(--bg3));
   color: #fff;
 }
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .home-top-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .home-owner-shop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .home-owner-shop .owner-img {
+    flex: 1;
+  }
+
+  .home-text {
+    order: 1;
+  }
+
+  .home-owner-shop {
+    order: 2;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: 0 0 0 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 10px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn, .btn.ghost {
+    width: 80%;
+    text-align: center;
+  }
+}
 
 /* NAV */
 .nav{
