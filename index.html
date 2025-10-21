@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <nav class="nav">
     <div class="brand"><a href="index.html">Al-Matiri Fiber Glass</a></div>
+    <button class="hamburger" aria-label="menu">☰</button>
     <ul class="nav-links">
       <li><a href="index.html" class="nav-item active">Home</a></li>
       <li><a href="#about" class="nav-item">About</a></li>
@@ -18,70 +18,55 @@
       <li><a href="products.html" class="nav-item">See Products</a></li>
       <li><a href="contact.html" class="nav-item">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="menu">☰</button>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="card home-images">
-    <div class="home-top-grid">
-      <!-- Left side text -->
-      <div class="home-text">
-        <h1>Welcome to Al-Matiri Fiber Glass</h1>
-        <p>Your place for best quality, designing, unique and imported high quality fiberglass. 
-        Al-Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 25 years, 
-        we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness.</p>
-        <div class="hero-cta">
-          <a class="btn" href="shop.html">Shop Details</a>
-          <a class="btn ghost" href="products.html">See Products</a>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Al-Matiri Fiber Glass</h1>
+      <p>Your place for best quality, designing, unique and imported high quality fiberglass. Al Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 25 years, we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness.</p>
+      <div class="hero-cta">
+        <a href="shop.html" class="btn">Shop Details</a>
+        <a href="products.html" class="btn ghost">See Products</a>
       </div>
-
-      <!-- Right side images -->
-      <div class="home-owner-shop">
-        <div class="owner-img">
-          <img src="images/home1.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic"/>
-          <p class="owner-text">Owner: Ejaz Ahmed</p>
-        </div>
-        <div class="owner-img">
-          <img src="images/home2.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic"/>
-          <p class="owner-text">Owner: Ejaz Ahmed</p>
-        </div>
+    </div>
+    <div class="hero-images">
+      <div class="owner-img">
+        <img src="images/home1.jpg.jpg" alt="Owner Ejaz Ahmed" />
+        <p>Owner: Ejaz Ahmed</p>
+      </div>
+      <div class="owner-img">
+        <img src="images/home2.jpg.jpg" alt="Owner Ejaz Ahmed" />
+        <p>Owner: Ejaz Ahmed</p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <main class="container">
-    <section id="about" class="card about-card">
-      <h2>About Us</h2>
-      <p>Al-Matiri Fiber Glass has served customers across Jeddah and beyond. 
-      We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. 
-      Our team focuses on durable design and affordable prices.</p>
-      <ul class="bullets">
-        <li>25+ years experience</li>
-        <li>Manufacturing • Repair • Installation</li>
-        <li>Custom orders accepted</li>
-      </ul>
-    </section>
-  </main>
+  <!-- About Section -->
+  <section id="about" class="container about-card">
+    <h2>About Us</h2>
+    <p>Al-Matiri Fiber Glass has served customers across Jeddah and beyond. We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. Our team focuses on durable design and affordable prices.</p>
+    <ul class="bullets">
+      <li>25+ years experience</li>
+      <li>Manufacturing • Repair • Installation</li>
+      <li>Custom orders accepted</li>
+    </ul>
+  </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div><strong>Phone:</strong> <a href="tel:0502511885">0502511885</a></div>
     <div>© 2025 Al-Matiri Fiber Glass</div>
   </footer>
 
-  <script src="script.js"></script>
-
   <script>
     // Hamburger toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('open');
     });
   </script>
-
 </body>
 </html>
 
