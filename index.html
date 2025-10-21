@@ -1,1 +1,78 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width,initial-scale=1" /> <title>Al-Matiri Fiber Glass — Home</title> <link rel="stylesheet" href="style.css" /> </head> <body> <!-- Language selection toggle --> <div id="langModal" class="lang-modal"> <div class="lang-modal-content"> <h2>Select Language | اختر اللغة</h2> <button class="lang-btn" data-lang="en">English</button> <button class="lang-btn" data-lang="ar">العربية</button> </div> </div> <nav class="nav"> <div class="brand"><a href="index.html" data-en="Al-Matiri Fiber Glass" data-ar="أل-مطيري للألياف الزجاجية">Al-Matiri Fiber Glass</a></div> <ul class="nav-links"> <li><a href="index.html" class="nav-item active" data-en="Home" data-ar="الرئيسية">Home</a></li> <li><a href="index.html#about" class="nav-item" data-en="About" data-ar="من نحن">About</a></li> <li><a href="shop.html" class="nav-item" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a></li> <li><a href="products.html" class="nav-item" data-en="Products" data-ar="المنتجات">Products</a></li> <li><a href="contact.html" class="nav-item" data-en="Contact & Location" data-ar="اتصل & الموقع">Contact & Location</a></li> </ul> <button class="hamburger" aria-label="menu">☰</button> </nav> <!-- Home Page Highlights --> <section class="card home-images"> <div class="home-top-grid"> <!-- Left side text --> <div class="home-text"> <h1 data-en="Welcome to Al-Matiri Fiber Glass" data-ar="مرحبا بكم في أل-مطيري للألياف الزجاجية"> Welcome to Al-Matiri Fiber Glass </h1> <p data-en="Your place for best quality, designing, unique and imported high quality fiberglass. Al Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 25 years, we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness." data-ar="مكانك للحصول على أفضل جودة وتصاميم فريدة وألياف زجاجية مستوردة عالية الجودة. أل-مطيري للألياف الزجاجية هو اسم موثوق في منتجات الألياف الزجاجية عالية الجودة. لأكثر من 25 عامًا، نقوم بتصنيع وبيع وإصلاح عناصر الألياف الزجاجية — معروفة بالقوة وطول العمر والتكلفة المعقولة."> Your place for best quality, designing, unique and imported high quality fiberglass. Al Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 25 years, we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness. </p> <div class="hero-cta"> <a class="btn" href="shop.html" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a> <a class="btn ghost" href="products.html" data-en="See Products" data-ar="عرض المنتجات">See Products</a> </div> </div> </section> <main class="container"> <section id="about" class="card about-card"> <div class="about-grid"> <div> <h2 data-en="About Us" data-ar="من نحن">About Us</h2> <p data-en="Al-Matiri Fiber Glass has served customers across Jeddah and beyond. We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. Our team focuses on durable design and affordable prices." data-ar="أل-مطيري للألياف الزجاجية خدم العملاء في جدة وما حولها. نحن نصنع ونزود برك وأحواض وتركيبات مخصصة من الألياف الزجاجية. يركز فريقنا على تصميم متين وأسعار معقولة."> Al-Matiri Fiber Glass has served customers across Jeddah and beyond. We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. Our team focuses on durable design and affordable prices. </p> <ul class="bullets"> <li data-en="25+ years experience" data-ar="أكثر من 25 عامًا من الخبرة">25+ years experience</li> <li data-en="Manufacturing • Repair • Installation" data-ar="تصنيع • إصلاح • تركيب">Manufacturing • Repair • Installation</li> <li data-en="Custom orders accepted" data-ar="طلبات مخصصة مقبولة">Custom orders accepted</li> </ul> </div> </div> <!-- Right side images stacked --> <div class="home-owner-shop"> <!-- Papa's pic --> <div class="owner-img"> <img src="images/home1.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic" /> <p class="owner-text">Owner: Ejaz Ahmed</p> </div> <div class="home-owner-shop"> <!-- Papa's pic --> <div class="owner-img"> <img src="images/home2.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic" /> <p class="owner-text">Owner: Ejaz Ahmed</p> </div> </section> </main> <footer class="site-footer"> <div> <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong> <a href="tel:0502511885">0502511885</a> </div> <div>© Al-Matiri Fiber Glass</div> </footer> <script src="script.js"></script> <script> // Language toggle document.addEventListener('DOMContentLoaded', () => { const modal = document.getElementById('langModal'); const langButtons = document.querySelectorAll('.lang-btn'); modal.style.display = 'flex'; langButtons.forEach(btn => { btn.addEventListener('click', () => { const lang = btn.getAttribute('data-lang'); document.querySelectorAll('[data-en]').forEach(el => { el.textContent = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en'); }); modal.style.display = 'none'; }); }); }); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al-Matiri Fiber Glass — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="brand"><a href="index.html">Al-Matiri Fiber Glass</a></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item active">Home</a></li>
+      <li><a href="#about" class="nav-item">About</a></li>
+      <li><a href="shop.html" class="nav-item">Shop Details</a></li>
+      <li><a href="products.html" class="nav-item">See Products</a></li>
+      <li><a href="contact.html" class="nav-item">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="menu">☰</button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="card home-images">
+    <div class="home-top-grid">
+      <!-- Left side text -->
+      <div class="home-text">
+        <h1>Welcome to Al-Matiri Fiber Glass</h1>
+        <p>Your place for best quality, designing, unique and imported high quality fiberglass. 
+        Al-Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 25 years, 
+        we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness.</p>
+        <div class="hero-cta">
+          <a class="btn" href="shop.html">Shop Details</a>
+          <a class="btn ghost" href="products.html">See Products</a>
+        </div>
+      </div>
+
+      <!-- Right side images -->
+      <div class="home-owner-shop">
+        <div class="owner-img">
+          <img src="images/home1.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic"/>
+          <p class="owner-text">Owner: Ejaz Ahmed</p>
+        </div>
+        <div class="owner-img">
+          <img src="images/home2.jpg.jpg" alt="Owner Ejaz Ahmed" class="home-pic"/>
+          <p class="owner-text">Owner: Ejaz Ahmed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <main class="container">
+    <section id="about" class="card about-card">
+      <h2>About Us</h2>
+      <p>Al-Matiri Fiber Glass has served customers across Jeddah and beyond. 
+      We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. 
+      Our team focuses on durable design and affordable prices.</p>
+      <ul class="bullets">
+        <li>25+ years experience</li>
+        <li>Manufacturing • Repair • Installation</li>
+        <li>Custom orders accepted</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div><strong>Phone:</strong> <a href="tel:0502511885">0502511885</a></div>
+    <div>© 2025 Al-Matiri Fiber Glass</div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
