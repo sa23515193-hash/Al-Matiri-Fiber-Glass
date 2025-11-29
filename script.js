@@ -41,3 +41,63 @@ function applyLanguage(lang) {
     ? "اتصل بنا"
     : "Contact Us";
 }
+
+// ----- GALLERY LIGHTBOX -----
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".gallery-item");
+  const lightbox = document.getElementById("lightbox");
+  const lbImage = document.getElementById("lb-image");
+
+  const btnClose = document.querySelector(".lb-close");
+  const btnNext = document.querySelector(".lb-next");
+  const btnPrev = document.querySelector(".lb-prev");
+
+  let currentIndex = 0;
+
+  // Open Lightbox
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentIndex = index;
+      showImage();
+      lightbox.style.display = "flex";
+    });
+  });
+
+  // Show selected image
+  function showImage() {
+    lbImage.src = images[currentIndex].src;
+  }
+
+  // Next image
+  btnNext.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  });
+
+  // Previous image
+  btnPrev.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  });
+
+  // Close lightbox
+  btnClose.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  // Close when clicking outside the image
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  // Keyboard controls
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "ArrowRight") btnNext.click();
+      if (e.key === "ArrowLeft") btnPrev.click();
+      if (e.key === "Escape") btnClose.click();
+    }
+  });
+});
