@@ -210,3 +210,43 @@ body {
   .center-images img{max-width:90%}
 }
 
+
+/* Lightbox Styling */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom effect */
+.lightbox img:hover {
+  transform: scale(1.03);
+}
+
+.lb-close, .lb-prev, .lb-next {
+  position: absolute;
+  background: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
+}
+
+.lb-close { top: 20px; right: 20px; }
+.lb-prev { left: 20px; }
+.lb-next { right: 20px; }
+
+
