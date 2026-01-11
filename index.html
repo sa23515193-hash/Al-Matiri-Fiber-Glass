@@ -63,107 +63,29 @@
     </div>
   </section>
 
+
 <section class="container">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <h2>Shop Details</h2>
 
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="./images/shop1.jpg.jpg" alt="Fiber Glass Product">
+      <h4>Fiber Glass Sheets</h4>
+    </div>
 
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="Al Mautiri Fiber Glass - مؤسسة متخصصة في تصنيع وتركيب منتجات الفيبر جلاس بجودة عالية في السعودية. نضمن المتانة، التصميم العصري والخدمة الممتازة." />
-  <meta name="keywords" content="Al Mautiri Fiber Glass, فيبر جلاس, مطيري فيبر جلاس, Fiber Glass Saudi Arabia, فيبر جلاس جدة, فيبر جلاس المملكة العربية السعودية, منتجات الفيبر جلاس" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/" />
+    <div class="product-card">
+      <img src="./images/shop2.jpg.jpg" alt="Al Material Fiber Glass">
+      <h4>Al-Material Fiber Glass</h4>
+    </div>
 
-  <!-- ✅ Open Graph / Facebook -->
-  <meta property="og:title" content="Al Mautiri Fiber Glass | فيبر جلاس السعودية" />
-  <meta property="og:description" content="Al Mautiri Fiber Glass - مصنع فيبر جلاس متخصص في المملكة العربية السعودية بجودة وخدمة عالية." />
-  <meta property="og:url" content="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/logo.png" />
-
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Al Mautiri Fiber Glass | فيبر جلاس السعودية" />
-  <meta name="twitter:description" content="منتجات فيبر جلاس عالية الجودة من مؤسسة المطيري للفيبر جلاس." />
-  <meta name="twitter:image" content="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/logo.png" />
-
-  <!-- ✅ Favicon (optional) -->
-  <link rel="icon" type="image/png" href="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/favicon.png" />
-</head>
-<body>
-  <!-- Language selection toggle (same modal as index.html) -->
-  <div id="langModal" class="lang-modal">
-    <div class="lang-modal-content">
-      <h2>Select Language | اختر اللغة</h2>
-      <button class="lang-btn" data-lang="en">English</button>
-      <button class="lang-btn" data-lang="ar">العربية</button>
+    <div class="product-card">
+      <img src="./images/shop3.jpg.jpg" alt="Custom Fiber Glass">
+      <h4>Custom Fiber Glass</h4>
     </div>
   </div>
 
-
-  <header class="page-header">
-    <h1 data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</h1>
-    <p class="muted" data-en="Click any image to view enlarged. Use arrows to navigate the sequence."
-       data-ar="انقر على أي صورة لعرضها بحجم أكبر. استخدم الأسهم للتنقل بين الصور.">
-      Click any image to view enlarged. Use arrows to navigate the sequence.
-    </p>
-  </header>
-
-  <main class="container">
-    <section class="card gallery">
-      <div class="gallery-grid">
-        <!-- Shop images in proper sequence -->
-        <img data-index="0" src="images/shop2.jpg.jpg" alt="shop2" class="gallery-item" />
-        <img data-index="1" src="images/shop3.jpg.jpg" alt="shop3" class="gallery-item" />
-        <img data-index="2" src="images/shop4.jpg.jpg" alt="shop4" class="gallery-item" />
-        <img data-index="3" src="images/shop5.jpg.jpg" alt="shop5" class="gallery-item" />
-        <img data-index="4" src="images/shop6.jpg.jpg" alt="shop6" class="gallery-item" />
-        <img data-index="5" src="images/shop7.jpg.jpg" alt="shop7" class="gallery-item" />
-        <img data-index="6" src="images/shop8.jpg.jpg" alt="shop8" class="gallery-item" />
-        <img data-index="7" src="images/shop9.jpg.jpg" alt="shop9" class="gallery-item" />
-        <img data-index="8" src="images/shop10.jpg.jpg" alt="shop10" class="gallery-item" />
-        <img data-index="9" src="images/shop11.jpg.jpg" alt="shop11" class="gallery-item" />
-        <img data-index="10" src="images/shop12.jpg.jpg" alt="shop12" class="gallery-item" />
-        <img data-index="11" src="images/shop13.jpg.jpg" alt="shop13" class="gallery-item" />
-        <img data-index="12" src="images/shop14.jpg.jpg" alt="shop14" class="gallery-item" />
-      </div>
-
-    </section>
-  </main>
-  
-
-  <!-- Lightbox for zoomable images -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lb-close" aria-label="close">✕</button>
-    <button class="lb-prev" aria-label="previous">◀</button>
-    <img id="lb-image" src="" alt="enlarged" />
-    <button class="lb-next" aria-label="next">▶</button>
-  </div>
-
-  <script src="script.js"></script>
-  <script>
-    // Language toggle script (same as index)
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('langModal');
-      const langButtons = document.querySelectorAll('.lang-btn');
-
-      modal.style.display = 'flex';
-
-      langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const lang = btn.getAttribute('data-lang');
-          document.querySelectorAll('[data-en]').forEach(el => {
-            el.textContent = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-          });
-          modal.style.display = 'none';
-        });
-      });
-    });
-  </script>
+  <a href="shop.html" class="btn">See All </a>
 </section>
-
   
 <section class="container">
   <h2>Featured Products</h2>
