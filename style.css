@@ -82,22 +82,23 @@ body{
 .hero-images{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  gap:24px;
+  align-items:stretch;
   margin-top:20px;
 }
 
 .owner-img{
   background:var(--card);
-  padding:10px;
+  padding:12px;
   border-radius:var(--radius);
 }
 
 .owner-img img{
   width:100%;
-  height:220px;
+  height:260px;
   object-fit:cover;
-  border-radius:10px;
-  transition:.35s;
+  object-position:center;
+  border-radius:12px;
 }
 
 .owner-img img:hover{
@@ -149,8 +150,8 @@ h2{
 
 .product-card img{
   width:100%;
-  height:180px;
-  object-fit:cover;
+  height:200px;
+  object-fit:contain;
   border-radius:10px;
   transition:.35s;
 }
@@ -197,4 +198,14 @@ h2{
   .nav-links{display:none;flex-direction:column;background:#020617;padding:12px;border-radius:10px;margin-top:10px}
   .nav-links.open{display:flex}
   .hamburger{display:block}
+}
+
+
+@media(max-width:600px){
+  .owner-img img{
+    height:200px;
+  }
+  .product-card img{
+    height:160px;
+  }
 }
