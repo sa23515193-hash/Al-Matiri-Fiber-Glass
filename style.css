@@ -209,3 +209,13 @@ h2{
     height:160px;
   }
 }
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .home-top-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
