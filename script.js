@@ -101,3 +101,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+// NAVBAR
+const hamburger=document.querySelector(".hamburger");
+const navLinks=document.querySelector(".nav-links");
+
+hamburger.addEventListener("click",()=>{
+  navLinks.classList.toggle("open");
+});
+
+// LANGUAGE MODAL
+document.addEventListener("DOMContentLoaded",()=>{
+  const modal=document.getElementById("langModal");
+  if(!modal)return;
+
+  const saved=localStorage.getItem("lang");
+  if(!saved) modal.style.display="flex";
+  else applyLang(saved);
+
+  document.querySelectorAll(".lang-btn").forEach(btn=>{
+    btn.onclick=()=>{
+      const lang=btn.dataset.lang;
+      localStorage.setItem("lang",lang);
+      applyLang(lang);
+      modal.style.display="none";
+    }
+  });
+});
+
+function applyLang(lang){
+  document.body.dir=lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.textContent=lang==="ar"?el.dataset.ar:el.dataset.en;
+  });
+}
