@@ -5,7 +5,7 @@
   --gold:#e6c76e;
   --muted: background:linear-gradient(to right, #58573c0a, #cccccc2c);
   --card:rgba(1724230a#);
-  --radius:16px;
+  --radius:12px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -24,7 +24,6 @@ body{
   background:rgb(3, 7, 42);
   backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(255,255,255,.1);
-  height:0px;
 }
 
 .brand a{
@@ -190,7 +189,7 @@ h2{
 }
 
 .social-links img{
-  margin:0 6px;
+  margin:20px;
   filter:brightness(1.2);
 }
 
