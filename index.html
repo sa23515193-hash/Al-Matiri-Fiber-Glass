@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Al-Mutairi Fiber Glass — Home</title>
 
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/warraich1707@gmail.com.min.js"></script>
 
   <!-- ✅ SEO Meta Tags -->
   <meta name="description" content="Al Mautiri Fiber Glass - مؤسسة متخصصة في تصنيع وتركيب منتجات الفيبر جلاس بجودة عالية في السعودية. نضمن المتانة، التصميم العصري والخدمة الممتازة." />
@@ -372,7 +372,7 @@ h2{
     </select>
   </div>
 
-  <button class="order-btn" onclick="sendOrder()">Confirm Order</button>
+  <button class="order-btn" onclick="sendEmail()">Confirm Order</button>
 </section>
 
 <section class="container">
@@ -520,26 +520,31 @@ h2{
 
 <script>
     
-function sendOrder(){
-  const email=document.getElementById("userEmail").value;
-  const message=document.getElementById("userMessage").value;
-  const city=document.getElementById("userCity").value;
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-  if(email===""||message===""||city===""){
-    alert("Please fill all fields.");
-    return;
-  }
+<script>
+(function(){
+emailjs.init("OiAORae-KMpwRpKBi"); 
+})();
 
-  const subject="New Order from Website";
-  const body=`Customer Email: ${email}
-City: ${city}
+function sendEmail(){
 
-Order Details:
-${message}`;
+emailjs.send("Al-Mutairi Fiber Glass","template_47jzbyf",{
+city: document.getElementById("city").value,
+requirement: document.getElementById("requirement").value,
+email: document.getElementById("email").value
+})
+.then(function(){
+alert("Email Sent Successfully!");
+document.getElementById("city").value="";
+document.getElementById("requirement").value="";
+document.getElementById("email").value="";
+}, function(error){
+alert("Error Sending Email");
+});
 
-  window.location.href=
-  `mailto:ijazahmedpak87@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
+</script>
 
 // ----- GALLERY LIGHTBOX -----
 document.addEventListener("DOMContentLoaded", () => {
