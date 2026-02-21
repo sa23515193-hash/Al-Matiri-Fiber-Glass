@@ -219,22 +219,25 @@ body{
     </div>
   </div>
   
-<nav class="nav">
-  <div><a href="index.html">Al-Matiri Fiber Glass</a></div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="shop.html">Shop Details</a></li>
-    <li><a href="products.html">Products</a></li>
-     <li><a href="contact.html">Contact Us & Location</a></li>
-     <li><a href="index.html">About</a></li>
-    
-  </ul>
-  <button class="hamburger">☰</button>
+
+ <nav class="nav">
+    <div class="brand"><a href="index.html" data-en="Al-Matiri Fiber Glass" data-ar="أل-مطيري للألياف الزجاجية">Al-Matiri Fiber Glass</a></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item" data-en="Home" data-ar="الرئيسية">Home</a></li>
+      <li><a href="index.html#about" class="nav-item" data-en="About" data-ar="من نحن">About</a></li>
+      <li><a href="shop.html" class="nav-item active" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a></li>
+      <li><a href="products.html" class="nav-item" data-en="Products" data-ar="المنتجات">Products</a></li>
+      <li><a href="contact.html" class="nav-item" data-en="Contact & Location" data-ar="اتصل & الموقع">Contact & Location</a></li>
+    </ul>
+    <button class="hamburger" aria-label="menu">☰</button>
 </nav>
 
 <header class="page-header">
-  <h1>Shop Details</h1>
-  <p class="muted">Click any image to zoom. Use arrows to navigate.</p>
+    <h1 data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</h1>
+    <p class="muted" data-en="Click any image to view enlarged. Use arrows to navigate the sequence."
+       data-ar="انقر على أي صورة لعرضها بحجم أكبر. استخدم الأسهم للتنقل بين الصور.">
+      Click any image to view enlarged. Use arrows to navigate the sequence.
+    </p>
 </header>
 
 <main class="container">
@@ -255,14 +258,19 @@ body{
   </div>
 
   <div class="center">
-    <a class="btn" href="index.html">⬅ Back to Home</a>
-  </div>
+        <a class="btn" href="index.html" data-en="⬅ Back to Home" data-ar="⬅ العودة إلى الرئيسية">⬅ Back to Home</a>
+      </div>
 </main>
 
 <footer class="site-footer">
-  <div><strong>Phone:</strong> 0502511885</div>
-  <div>Location: Jeddah, Al-Rabwa Dist.</div>
-</footer>
+    <div>
+      <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong> <a href="tel:0502511885">0502511885</a>
+    </div>
+    <div data-en="Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St."
+         data-ar="الموقع: جدة، حي الربوة، شارع الثلاثين، بالقرب من شارع الستين">
+      Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St.
+    </div>
+  </footer>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
@@ -274,6 +282,25 @@ body{
 
 <script>
 
+  document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('langModal');
+      const langButtons = document.querySelectorAll('.lang-btn');
+
+      modal.style.display = 'flex';
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang');
+          document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+          });
+          modal.style.display = 'none';
+        });
+      });
+    });
+
+
+  
 /* ===== HAMBURGER ===== */
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
