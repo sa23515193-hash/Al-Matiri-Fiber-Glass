@@ -4,15 +4,15 @@
   --bg3:#334155;
   --gold:#e6c76e;
   --muted: background:linear-gradient(to right, #58573c0a, #cccccc2c);
-  --card:rgba(255,255,255,.08);
-  --radius:14px;
+  --card:rgba(1724230a#);
+  --radius:16px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
   font-family:"Segoe UI",system-ui,sans-serif;
-  background:linear-gradient(to right, #f46751,#3f75eb,#e8dd83,#60f071);
+  background:linear-gradient(to right, #ee847c,#8be3ea);
   color:#fff;
 }
 
@@ -24,7 +24,7 @@ body{
   background:rgb(3, 7, 42);
   backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(255,255,255,.1);
-  height:25px;
+  height:0px;
 }
 
 .brand a{
@@ -96,7 +96,7 @@ body{
 
 .owner-img img{
   width:100%;
-  height:2400px;
+  height:260px;
   object-fit:cover;
   object-position:center;
   border-radius:12px;
