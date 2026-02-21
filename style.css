@@ -3,7 +3,7 @@
   --bg2:#1e293b;
   --bg3:#334155;
   --gold:#e6c76e;
-  --muted: background:linear-gradient(to right, #58573c0a, #cccccc2c);
+  --muted: background:#94bedf;
   --card:rgba(1724230a#);
   --radius:12px;
 }
@@ -12,7 +12,7 @@
 
 body{
   font-family:"Segoe UI",system-ui,sans-serif;
-  background:linear-gradient(to right, #ee847c,#8be3ea);
+  background:#94bedf;
   color:#fff;
 }
 
