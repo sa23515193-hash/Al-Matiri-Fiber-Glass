@@ -1,134 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Al-Matiri Fiber Glass — Products</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Al-Mutairi Fiber Glass — Products</title>
+
+<style>
+
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#eaf4ff; /* Light blue background */
+  color:#222;
+}
+
+/* ===== NAVBAR ===== */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:#0c3c60;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links li a{
+  font-weight:500;
+}
+
+.hamburger{
+  display:none;
+  font-size:26px;
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* ===== HEADER ===== */
+.page-header{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.page-header h1{
+  font-size:32px;
+  margin-bottom:10px;
+  color:#0c3c60;
+}
+
+.muted{
+  color:#555;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+/* ===== GALLERY GRID ===== */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.gallery-item{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-item:hover{
+  transform:scale(1.05);
+}
+
+/* ===== BUTTON ===== */
+.center{
+  text-align:center;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 20px;
+  background:#d4af37; /* Golden */
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#b9962e;
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background:#f8f9fa;
+  color:#0c3c60;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  border-top:3px solid #d4af37;
+}
+
+.site-footer a{
+  color:#d4af37;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:12px;
+}
+
+.lb-close,
+.lb-prev,
+.lb-next{
+  position:absolute;
+  background:none;
+  border:none;
+  color:white;
+  font-size:35px;
+  cursor:pointer;
+}
+
+.lb-close{
+  top:20px;
+  right:30px;
+}
+
+.lb-prev{
+  left:30px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.lb-next{
+  right:30px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#0c3c60;
+    position:absolute;
+    top:60px;
+    right:0;
+    width:200px;
+    padding:20px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .gallery-item{
+    height:180px;
+  }
+}
+
+</style>
 </head>
 <body>
-  <!-- Language selection toggle -->
-  <div id="langModal" class="lang-modal">
-    <div class="lang-modal-content">
-      <h2>Select Language | اختر اللغة</h2>
-      <button class="lang-btn" data-lang="en">English</button>
-      <button class="lang-btn" data-lang="ar">العربية</button>
-    </div>
+
+
+
+
+  
+<!-- ===== NAVBAR ===== -->
+<nav class="nav">
+  <div class="brand">
+    <a href="index.html"
+       data-en="Al-Matiri Fiber Glass"
+       data-ar="المطيري للفيبر جلاس">
+       Al-Matiri Fiber Glass
+    </a>
   </div>
 
-  <nav class="nav">
-    <div class="brand"><a href="index.html" data-en="Al-Matiri Fiber Glass" data-ar="أل-مطيري للألياف الزجاجية">Al-Matiri Fiber Glass</a></div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-item" data-en="Home" data-ar="الرئيسية">Home</a></li>
-      <li><a href="index.html#about" class="nav-item" data-en="About" data-ar="من نحن">About</a></li>
-      <li><a href="shop.html" class="nav-item" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a></li>
-      <li><a href="products.html" class="nav-item active" data-en="Products" data-ar="المنتجات">Products</a></li>
-      <li><a href="contact.html" class="nav-item" data-en="Contact & Location" data-ar="اتصل & الموقع">Contact & Location</a></li>
-    </ul>
-    <button class="hamburger" aria-label="menu">☰</button>
-  </nav>
+  <ul class="nav-links">
+    <li>
+      <a href="index.html"
+         class="nav-item"
+         data-en="Home"
+         data-ar="الرئيسية">
+         Home
+      </a>
+    </li>
 
-  <header class="page-header">
-    <h1 data-en="Products" data-ar="المنتجات">Products</h1>
-    <p class="muted" data-en="All product images in one place — click to enlarge and browse in sequence."
-       data-ar="جميع صور المنتجات في مكان واحد — انقر للتكبير والتصفح بالترتيب.">
-      All product images in one place — click to enlarge and browse in sequence.
-    </p>
-  </header>
+    <li>
+      <a href="index.html#about"
+         class="nav-item"
+         data-en="About"
+         data-ar="من نحن">
+         About
+      </a>
+    </li>
 
-  <main class="container">
-    <section class="card gallery">
-      <div class="gallery-grid">
-        <!-- Product images in proper sequence -->
-        <img data-index="0" src="images/product5.jpg.jpg" alt="p5" class="gallery-item" />
-        <img data-index="1" src="images/product6.jpg.jpg" alt="p6" class="gallery-item" />
-        <img data-index="2" src="images/product7.jpg.jpg" alt="p7" class="gallery-item" />
-        <img data-index="3" src="images/product8.jpg.jpg" alt="p8" class="gallery-item" />
-        <img data-index="4" src="images/product9.jpg.jpg" alt="p9" class="gallery-item" />
-        <img data-index="5" src="images/product10.jpg.jpg" alt="p10" class="gallery-item"/>
-        <img data-index="6" src="images/product11.jpg.jpg" alt="p11" class="gallery-item" />
-        <img data-index="7" src="images/product12.jpg.jpg" alt="p12" class="gallery-item" />
-        <img data-index="8" src="images/product13.jpg.jpg" alt="p13" class="gallery-item" />
-        <img data-index="9" src="images/product14.jpg.jpg" alt="p14" class="gallery-item" />
-        <img data-index="10" src="images/product15.jpg.jpg" alt="p15" class="gallery-item" />
-        <img data-index="11" src="images/product16.jpg.jpg" alt="p16" class="gallery-item" />
-        <img data-index="12" src="images/product17.jpg.jpg" alt="p17" class="gallery-item" />
-        <img data-index="13" src="images/product18.jpg.jpg" alt="p18" class="gallery-item" />
-        <img data-index="14" src="images/product19.jpg.jpg" alt="p19" class="gallery-item" />
-        <img data-index="15" src="images/product20.jpg.jpg" alt="p20" class="gallery-item" />
-        <img data-index="16" src="images/product21.jpg.jpg" alt="p21" class="gallery-item" />
-        <img data-index="17" src="images/product22.jpg.jpg" alt="p22" class="gallery-item" />
-        <img data-index="18" src="images/product23.jpg.jpg" alt="p23" class="gallery-item" />
-        <img data-index="19" src="images/product24.jpg.jpg" alt="p24" class="gallery-item" />
-        <img data-index="20" src="images/product25.jpg.jpg" alt="p25" class="gallery-item" />
-        <img data-index="21" src="images/product26.jpg.jpg" alt="p26" class="gallery-item" />
-        <img data-index="22" src="images/product27.jpg.jpg" alt="p27" class="gallery-item" />
-        <img data-index="23" src="images/product28.jpg.jpg" alt="p28" class="gallery-item" />
-        <img data-index="24" src="images/product29.jpg.jpg" alt="p29" class="gallery-item" />
-        <img data-index="25" src="images/product30.jpg.jpg" alt="p30" class="gallery-item" />
-        <img data-index="26" src="images/product31.jpg.jpg" alt="p31" class="gallery-item" />
-        <img data-index="27" src="images/product32.jpg.jpg" alt="p32" class="gallery-item" />
-        <img data-index="28" src="images/product33.jpg.jpg" alt="p33" class="gallery-item" />
-        <img data-index="29" src="images/product34.jpg.jpg" alt="p34" class="gallery-item" />
-        <img data-index="30" src="images/product35.jpg.jpg" alt="p35" class="gallery-item" />
-        <img data-index="31" src="images/product36.jpg.jpg" alt="p36" class="gallery-item" />
-        <img data-index="32" src="images/product37.jpg.jpg" alt="p37" class="gallery-item" />
-        <img data-index="33" src="images/product38.jpg.jpg" alt="p38" class="gallery-item" />
-        <img data-index="34" src="images/product39.jpg.jpg" alt="p39" class="gallery-item" />
-        <img data-index="35" src="images/product40.jpg.jpg" alt="p40" class="gallery-item" />
-        <img data-index="36" src="images/product41.jpg.jpg" alt="p41" class="gallery-item" />
-        <img data-index="37" src="images/product42.jpg.jpg" alt="p42" class="gallery-item" />
-        <img data-index="38" src="images/product43.jpg.jpg" alt="p43" class="gallery-item" />
-        <img data-index="39" src="images/product44.jpg.jpg" alt="p44" class="gallery-item" />
-        <img data-index="40" src="images/product45.jpg.jpg" alt="p45" class="gallery-item" />
-        <img data-index="41" src="images/product1.jpg.jpg" alt="p1" class="gallery-item" />
-        <img data-index="42" src="images/product2.jpg.jpg" alt="p2" class="gallery-item" />
-        <img data-index="43" src="images/product3.jpg.jpg" alt="p3" class="gallery-item" />
-        <img data-index="44" src="images/product4.jpg.jpg" alt="p4" class="gallery-item" />
-      </div>
+    <li>
+      <a href="shop.html"
+         class="nav-item active"
+         data-en="Shop Details"
+         data-ar="معرض الصور">
+         Shop Details
+      </a>
+    </li>
 
-      <div class="center">
-        <a class="btn" href="index.html" data-en="⬅ Back to Home" data-ar="⬅ العودة إلى الرئيسية">⬅ Back to Home</a>
-      </div>
-    </section>
-  </main>
+    <li>
+      <a href="products.html"
+         class="nav-item"
+         data-en="Products"
+         data-ar="منتجاتنا">
+         Products
+      </a>
+    </li>
 
-  <footer class="site-footer">
-    <div>
-      <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong> <a href="tel:0502511885">0502511885</a>
-    </div>
-    <div data-en="Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St."
-         data-ar="الموقع: جدة، حي الربوة، شارع الثلاثين، بالقرب من شارع الستين">
-      Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St.
-    </div>
-  </footer>
+    <li>
+      <a href="contact.html"
+         class="nav-item"
+         data-en="Contact & Location"
+         data-ar="تواصل معنا والموقع">
+         Contact & Location
+      </a>
+    </li>
+  </ul>
 
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lb-close" aria-label="close">✕</button>
-    <button class="lb-prev" aria-label="previous">◀</button>
-    <img id="lb-image" src="" alt="enlarged" />
-    <button class="lb-next" aria-label="next">▶</button>
+  <button class="hamburger" aria-label="menu">☰</button>
+</nav>
+
+
+  
+
+<!-- ===== HEADER ===== -->
+<header class="page-header">
+  <h1 data-en="Our Products" data-ar="منتجاتنا">Our Products</h1>
+  <p class="muted"
+     data-en="Click any image to enlarge it and browse through all products."
+     data-ar="اضغط على أي صورة لتكبيرها واستعراض جميع المنتجات.">
+     Click any image to enlarge it and browse through all products.
+  </p>
+</header>
+
+<!-- ===== PRODUCTS ===== -->
+<main class="container">
+  <div class="gallery-grid">
+
+    <!-- IMPORTANT: remove double .jpg if not needed -->
+    <img src="images/product5.jpg.jpg" class="gallery-item">
+    <img src="images/product6.jpg.jpg" class="gallery-item">
+    <img src="images/product7.jpg.jpg" class="gallery-item">
+    <img src="images/product8.jpg.jpg" class="gallery-item">
+    <img src="images/product9.jpg.jpg" class="gallery-item">
+    <img src="images/product10.jpg.jpg" class="gallery-item">
+    <img src="images/product11.jpg.jpg" class="gallery-item">
+    <img src="images/product12.jpg.jpg" class="gallery-item">
+    <img src="images/product13.jpg.jpg" class="gallery-item">
+    <img src="images/product14.jpg.jpg" class="gallery-item">
+    <img src="images/product15.jpg.jpg" class="gallery-item">
+    <img src="images/product16.jpg.jpg" class="gallery-item">
+    <img src="images/product17.jpg.jpg" class="gallery-item">
+    <img src="images/product18.jpg.jpg" class="gallery-item">
+    <img src="images/product19.jpg.jpg" class="gallery-item">
+    <img src="images/product20.jpg.jpg" class="gallery-item">
+
   </div>
 
-  <script src="script.js"></script>
-  <script>
-    // Language toggle
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('langModal');
-      const langButtons = document.querySelectorAll('.lang-btn');
+  <div class="center">
+    <a class="btn" href="index.html"
+       data-en="⬅ Back to Home"
+       data-ar="⬅ الرجوع للرئيسية">
+       ⬅ Back to Home
+    </a>
+  </div>
+</main>
 
-      modal.style.display = 'flex';
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div>
+    <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong>
+    <a href="tel:0502511885">0502511885</a>
+  </div>
 
-      langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const lang = btn.getAttribute('data-lang');
-          document.querySelectorAll('[data-en]').forEach(el => {
-            el.textContent = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-          });
-          modal.style.display = 'none';
-        });
-      });
-    });
-  </script>
+  <div 
+    data-en="Location: Jeddah, Al-Rabwa District, Al-Thalathin Street, Near Al-Sitteen Street."
+    data-ar="الموقع: جدة، حي الربوة، شارع الثلاثين، بالقرب من شارع الستين.">
+    
+    Location: Jeddah, Al-Rabwa District, Al-Thalathin Street, Near Al-Sitteen Street.
+  
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" class="lightbox">
+  <button class="lb-close">✕</button>
+  <button class="lb-prev">◀</button>
+  <img id="lb-image">
+  <button class="lb-next">▶</button>
+</div>
+
+<script>
+
+/* ===== MOBILE MENU ===== */
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click",()=>{
+  navLinks.classList.toggle("active");
+});
+
+/* ===== LIGHTBOX ===== */
+const images = document.querySelectorAll(".gallery-item");
+const lightbox = document.getElementById("lightbox");
+const lbImage = document.getElementById("lb-image");
+const prevBtn = document.querySelector(".lb-prev");
+const nextBtn = document.querySelector(".lb-next");
+const closeBtn = document.querySelector(".lb-close");
+
+let currentIndex = 0;
+
+function showImage(index){
+  lbImage.src = images[index].src;
+}
+
+images.forEach((img,index)=>{
+  img.addEventListener("click",()=>{
+    currentIndex = index;
+    showImage(currentIndex);
+    lightbox.style.display="flex";
+  });
+});
+
+nextBtn.addEventListener("click",()=>{
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage(currentIndex);
+});
+
+prevBtn.addEventListener("click",()=>{
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage(currentIndex);
+});
+
+closeBtn.addEventListener("click",()=>{
+  lightbox.style.display="none";
+});
+
+lightbox.addEventListener("click",(e)=>{
+  if(e.target === lightbox){
+    lightbox.style.display="none";
+  }
+});
+
+</script>
+
 </body>
 </html>
