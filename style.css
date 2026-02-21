@@ -12,7 +12,7 @@
 
 body{
   font-family:"Segoe UI",system-ui,sans-serif;
-  background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+  background:linear-gradient(to right,  #073ebe,#2edddc);
   color:#fff;
 }
 
