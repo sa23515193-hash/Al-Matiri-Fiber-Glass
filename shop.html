@@ -1,126 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Al-Matiri Fiber Glass — Shop Details</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Al-Matiri Fiber Glass — Shop Details</title>
 
+<style>
 
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="Al Mautiri Fiber Glass - مؤسسة متخصصة في تصنيع وتركيب منتجات الفيبر جلاس بجودة عالية في السعودية. نضمن المتانة، التصميم العصري والخدمة الممتازة." />
-  <meta name="keywords" content="Al Mautiri Fiber Glass, فيبر جلاس, مطيري فيبر جلاس, Fiber Glass Saudi Arabia, فيبر جلاس جدة, فيبر جلاس المملكة العربية السعودية, منتجات الفيبر جلاس" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/" />
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  <!-- ✅ Open Graph / Facebook -->
-  <meta property="og:title" content="Al Mautiri Fiber Glass | فيبر جلاس السعودية" />
-  <meta property="og:description" content="Al Mautiri Fiber Glass - مصنع فيبر جلاس متخصص في المملكة العربية السعودية بجودة وخدمة عالية." />
-  <meta property="og:url" content="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/logo.png" />
+body{
+  background:#f4f7fb;
+  color:#222;
+}
 
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Al Mautiri Fiber Glass | فيبر جلاس السعودية" />
-  <meta name="twitter:description" content="منتجات فيبر جلاس عالية الجودة من مؤسسة المطيري للفيبر جلاس." />
-  <meta name="twitter:image" content="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/logo.png" />
+/* ===== NAV ===== */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:#0c3c60;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-  <!-- ✅ Favicon (optional) -->
-  <link rel="icon" type="image/png" href="https://sa23515193-hash.github.io/AI-Matiri-Fiber-Glass/favicon.png" />
+.nav a{
+  color:white;
+  text-decoration:none;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links li a{
+  font-weight:500;
+}
+
+.hamburger{
+  display:none;
+  font-size:26px;
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* ===== HEADER ===== */
+.page-header{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.page-header h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.muted{
+  color:#666;
+}
+
+/* ===== GALLERY ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.gallery-item{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.3s ease;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item:hover{
+  transform:scale(1.05);
+}
+
+/* ===== BUTTON ===== */
+.center{
+  text-align:center;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 20px;
+  background:#0c3c60;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#125b91;
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background:#0c3c60;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:12px;
+}
+
+.lb-close,
+.lb-prev,
+.lb-next{
+  position:absolute;
+  background:none;
+  border:none;
+  color:white;
+  font-size:35px;
+  cursor:pointer;
+}
+
+.lb-close{
+  top:20px;
+  right:30px;
+}
+
+.lb-prev{
+  left:30px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.lb-next{
+  right:30px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#0c3c60;
+    position:absolute;
+    top:60px;
+    right:0;
+    width:200px;
+    padding:20px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .gallery-item{
+    height:200px;
+  }
+}
+
+</style>
+
 </head>
 <body>
-  <!-- Language selection toggle (same modal as index.html) -->
-  <div id="langModal" class="lang-modal">
-    <div class="lang-modal-content">
-      <h2>Select Language | اختر اللغة</h2>
-      <button class="lang-btn" data-lang="en">English</button>
-      <button class="lang-btn" data-lang="ar">العربية</button>
-    </div>
+
+<nav class="nav">
+  <div><a href="index.html">Al-Matiri Fiber Glass</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop Details</a></li>
+    <li><a href="products.html">Products</a></li>
+  </ul>
+  <button class="hamburger">☰</button>
+</nav>
+
+<header class="page-header">
+  <h1>Shop Details</h1>
+  <p class="muted">Click any image to zoom. Use arrows to navigate.</p>
+</header>
+
+<main class="container">
+  <div class="gallery-grid">
+    <img src="images/shop2.jpg.jpg" class="gallery-item">
+    <img src="images/shop3.jpg.jpg" class="gallery-item">
+    <img src="images/shop4.jpg.jpg" class="gallery-item">
+    <img src="images/shop5.jpg.jpg" class="gallery-item">
+    <img src="images/shop6.jpg.jpg" class="gallery-item">
+    <img src="images/shop7.jpg.jpg" class="gallery-item">
+    <img src="images/shop8.jpg.jpg" class="gallery-item">
+    <img src="images/shop9.jpg.jpg" class="gallery-item">
+    <img src="images/shop10.jpg.jpg" class="gallery-item">
+    <img src="images/shop11.jpg.jpg" class="gallery-item">
+    <img src="images/shop12.jpg.jpg" class="gallery-item">
+    <img src="images/shop13.jpg.jpg" class="gallery-item">
+    <img src="images/shop14.jpg.jpg" class="gallery-item">
   </div>
 
-  <nav class="nav">
-    <div class="brand"><a href="index.html" data-en="Al-Matiri Fiber Glass" data-ar="أل-مطيري للألياف الزجاجية">Al-Matiri Fiber Glass</a></div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-item" data-en="Home" data-ar="الرئيسية">Home</a></li>
-      <li><a href="index.html#about" class="nav-item" data-en="About" data-ar="من نحن">About</a></li>
-      <li><a href="shop.html" class="nav-item active" data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</a></li>
-      <li><a href="products.html" class="nav-item" data-en="Products" data-ar="المنتجات">Products</a></li>
-      <li><a href="contact.html" class="nav-item" data-en="Contact & Location" data-ar="اتصل & الموقع">Contact & Location</a></li>
-    </ul>
-    <button class="hamburger" aria-label="menu">☰</button>
-  </nav>
-
-  <header class="page-header">
-    <h1 data-en="Shop Details" data-ar="تفاصيل المتجر">Shop Details</h1>
-    <p class="muted" data-en="Click any image to view enlarged. Use arrows to navigate the sequence."
-       data-ar="انقر على أي صورة لعرضها بحجم أكبر. استخدم الأسهم للتنقل بين الصور.">
-      Click any image to view enlarged. Use arrows to navigate the sequence.
-    </p>
-  </header>
-
-  <main class="container">
-    <section class="card gallery">
-      <div class="gallery-grid">
-        <!-- Shop images in proper sequence -->
-        <img data-index="0" src="images/shop2.jpg.jpg" alt="shop2" class="gallery-item" />
-        <img data-index="1" src="images/shop3.jpg.jpg" alt="shop3" class="gallery-item" />
-        <img data-index="2" src="images/shop4.jpg.jpg" alt="shop4" class="gallery-item" />
-        <img data-index="3" src="images/shop5.jpg.jpg" alt="shop5" class="gallery-item" />
-        <img data-index="4" src="images/shop6.jpg.jpg" alt="shop6" class="gallery-item" />
-        <img data-index="5" src="images/shop7.jpg.jpg" alt="shop7" class="gallery-item" />
-        <img data-index="6" src="images/shop8.jpg.jpg" alt="shop8" class="gallery-item" />
-        <img data-index="7" src="images/shop9.jpg.jpg" alt="shop9" class="gallery-item" />
-        <img data-index="8" src="images/shop10.jpg.jpg" alt="shop10" class="gallery-item" />
-        <img data-index="9" src="images/shop11.jpg.jpg" alt="shop11" class="gallery-item" />
-        <img data-index="10" src="images/shop12.jpg.jpg" alt="shop12" class="gallery-item" />
-        <img data-index="11" src="images/shop13.jpg.jpg" alt="shop13" class="gallery-item" />
-        <img data-index="12" src="images/shop14.jpg.jpg" alt="shop14" class="gallery-item" />
-      </div>
-
-      <div class="center">
-        <a class="btn" href="index.html" data-en="⬅ Back to Home" data-ar="⬅ العودة إلى الرئيسية">⬅ Back to Home</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div>
-      <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong> <a href="tel:0502511885">0502511885</a>
-    </div>
-    <div data-en="Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St."
-         data-ar="الموقع: جدة، حي الربوة، شارع الثلاثين، بالقرب من شارع الستين">
-      Location: Jeddah, Al-Rabwa Dist. Al-Thalathin St., Near Al Sitteen St.
-    </div>
-  </footer>
-
-  <!-- Lightbox for zoomable images -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lb-close" aria-label="close">✕</button>
-    <button class="lb-prev" aria-label="previous">◀</button>
-    <img id="lb-image" src="" alt="enlarged" />
-    <button class="lb-next" aria-label="next">▶</button>
+  <div class="center">
+    <a class="btn" href="index.html">⬅ Back to Home</a>
   </div>
+</main>
 
-  <script src="script.js"></script> 
-  <!--<script>
-    // Language toggle script (same as index)
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('langModal');
-      const langButtons = document.querySelectorAll('.lang-btn');
+<footer class="site-footer">
+  <div><strong>Phone:</strong> 0502511885</div>
+  <div>Location: Jeddah, Al-Rabwa Dist.</div>
+</footer>
 
-      modal.style.display = 'flex';
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <button class="lb-close">✕</button>
+  <button class="lb-prev">◀</button>
+  <img id="lb-image">
+  <button class="lb-next">▶</button>
+</div>
 
-      langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const lang = btn.getAttribute('data-lang');
-          document.querySelectorAll('[data-en]').forEach(el => {
-            el.textContent = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-          });
-          modal.style.display = 'none';
-        });
-      });
-    });
-  </script>-->
+<script>
+
+/* ===== HAMBURGER ===== */
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click",()=>{
+  navLinks.classList.toggle("active");
+});
+
+/* ===== LIGHTBOX ===== */
+const images = document.querySelectorAll(".gallery-item");
+const lightbox = document.getElementById("lightbox");
+const lbImage = document.getElementById("lb-image");
+const prevBtn = document.querySelector(".lb-prev");
+const nextBtn = document.querySelector(".lb-next");
+const closeBtn = document.querySelector(".lb-close");
+
+let currentIndex = 0;
+
+function showImage(index){
+  lbImage.src = images[index].src;
+}
+
+images.forEach((img,index)=>{
+  img.addEventListener("click",()=>{
+    currentIndex = index;
+    showImage(currentIndex);
+    lightbox.style.display="flex";
+  });
+});
+
+nextBtn.addEventListener("click",()=>{
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage(currentIndex);
+});
+
+prevBtn.addEventListener("click",()=>{
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage(currentIndex);
+});
+
+closeBtn.addEventListener("click",()=>{
+  lightbox.style.display="none";
+});
+
+lightbox.addEventListener("click",(e)=>{
+  if(e.target === lightbox){
+    lightbox.style.display="none";
+  }
+});
+
+</script>
+
 </body>
 </html>
