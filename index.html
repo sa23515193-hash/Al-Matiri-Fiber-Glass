@@ -325,30 +325,25 @@ h2{
     <div class="hero-text">
       <h1>Welcome to Al-Mutairi Fiber Glass</h1>
       <p>Your place for best quality, designing, unique and imported high quality fiberglass. Al Matiri Fiber Glass is a trusted name in high-quality fiberglass products. For over 28 years, we have been manufacturing, selling and repairing fiberglass items — known for strength, longevity and cost-effectiveness.</p>
-      
     </div>
     <div class="hero-images">
       <div class="owner-img">
         <img src="images/home1.jpg.jpg" alt="Owner Ejaz Ahmed" />
         <p>Owner: Ejaz Ahmed</p>
       </div>
-      
     </div>
   </section>
 
   <section class="order-section">
   <h2 style="text-align:center;margin-bottom:25px;">Quick Order / Inquiry</h2>
-
   <div class="form-group">
     <label>Who you are (Your Email)</label>
     <input type="email" id="userEmail">
   </div>
-
   <div class="form-group">
     <label>What you want</label>
     <textarea id="userMessage"></textarea>
   </div>
-
   <div class="form-group">
     <label>Where are you from</label>
     <select id="userCity">
@@ -367,84 +362,56 @@ h2{
       <option>Jazan</option>
     </select>
   </div>
-
   <button class="order-btn" onclick="sendEmail()">Confirm Order</button>
 </section>
 
 <section class="container">
   <h2>Shop Details</h2>
-
   <div class="product-grid">
     <div class="product-card">
       <img src="./images/shop4.jpg.jpg" alt="Address Proof">
       <h4>Address Proof</h4>
     </div>
-
     <div class="product-card">
       <img src="./images/shop2.jpg.jpg" alt="Certificate">
       <h4>Certificate</h4>
     </div>
-
     <div class="product-card">
       <img src="./images/shop3.jpg.jpg" alt="Comercial Activity License">
       <h4>Comercial Activity License</h4>
     </div>
   </div>
-
   <a href="shop.html" class="btn">See All </a>
 </section>
   
 <section class="container">
   <h2>Featured Products</h2>
-
   <div class="product-grid">
     <div class="product-card">
       <img src="./images/product1.jpg.jpg" alt="Fiber Glass Product">
       <h4>Fiber Glass Sheets</h4>
     </div>
-
     <div class="product-card">
       <img src="./images/product2.jpg.jpg" alt="Al Material Fiber Glass">
       <h4>Al-Material Fiber Glass</h4>
     </div>
-
     <div class="product-card">
       <img src="./images/product3.jpg.jpg" alt="Custom Fiber Glass">
       <h4>Custom Fiber Glass</h4>
     </div>
   </div>
-
   <a href="products.html" class="btn">See All Products</a>
 </section>
-
-  
   <!-- About Section -->
   <section id="about" class="container about-card">
     <h2>About Us</h2>
     <p>Al-Mutairi Fiber Glass has served customers across Jeddah and beyond. We fabricate and supply fiberglass pools, tanks, and custom fiberglass fixtures. Our team focuses on durable design and affordable prices.</p>
     <ul class="bullets">
-      <li>25+ years experience</li>
+      <li>28+ years experience</li>
       <li>Manufacturing • Repair • Installation</li>
       <li>Custom orders accepted</li>
     </ul>
   </section>
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7010149514303209"
-     crossorigin="anonymous"></script>
-
-
-  <script>
-    // Hamburger toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  </script>
-
-
-
 <section class="container">
 
   <header class="page-header">
@@ -468,7 +435,6 @@ h2{
 
       <a class="btn" href="tel:0502511885">📞 Call Now</a>
     </section>
-
     <section class="card map-card">
       <h2>Location</h2>
      <div class="map-container">
@@ -480,7 +446,6 @@ h2{
     allowfullscreen=""
     loading="lazy">
   </iframe>
-
   <div style="text-align:center; margin-top:10px;">
     <a href="https://www.google.com/maps/search/?api=1&query=Al-Mutairi+Fiberglass,+Jeddah"
        target="_blank"
@@ -494,23 +459,15 @@ h2{
     <a href="https://www.tiktok.com/@ijazahmedjeddah1885" target="_blank">
       <img src="./images/tiktok.png" alt="TikTok" width="20">
     </a>
-
-    
     <a href="https://m.facebook.com/108217445260188/" target="_blank">
       <img src="./images/facebook.png" alt="Facebook" width="20">
     </a>
   </div>
   </main>
-
-  <script src="script.js"></script>
 </section>
-
   <footer class="site-footer">
   <p><strong>Owner:</strong> Ejaz Ahmed</p>
   <p><strong>Phone:</strong> <a href="tel:0502511885">0502511885</a></p>
-
-
-
   <p>© 2025 Al-Matiri Fiber Glass.All rights reserved</p>
 </footer>
 
@@ -538,57 +495,6 @@ alert("Error Sending Email");
 
 }
 
-
-// ----- GALLERY LIGHTBOX -----
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".gallery-item");
-  const lightbox = document.getElementById("lightbox");
-  const lbImage = document.getElementById("lb-image");
-
-  const btnClose = document.querySelector(".lb-close");
-  const btnNext = document.querySelector(".lb-next");
-  const btnPrev = document.querySelector(".lb-prev");
-
-  let currentIndex = 0;
-
-  // Open Lightbox
-  images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-      currentIndex = index;
-      showImage();
-      lightbox.style.display = "flex";
-    });
-  });
-
-  // Show selected image
-  function showImage() {
-    lbImage.src = images[currentIndex].src;
-  }
-
-  // Next image
-  btnNext.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
-  });
-
-  // Previous image
-  btnPrev.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage();
-  });
-
-  // Close lightbox
-  btnClose.addEventListener("click", () => {
-    lightbox.style.display = "none";
-  });
-
-  // Close when clicking outside the image
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = "none";
-    }
-  });
-
   // Keyboard controls
   document.addEventListener("keydown", (e) => {
     if (lightbox.style.display === "flex") {
@@ -608,31 +514,10 @@ hamburger.addEventListener("click",()=>{
   navLinks.classList.toggle("open");
 });
 
-// LANGUAGE MODAL
-document.addEventListener("DOMContentLoaded",()=>{
-  const modal=document.getElementById("langModal");
-  if(!modal)return;
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7010149514303209"
+     crossorigin="anonymous"></script>
 
-  const saved=localStorage.getItem("lang");
-  if(!saved) modal.style.display="flex";
-  else applyLang(saved);
 
-  document.querySelectorAll(".lang-btn").forEach(btn=>{
-    btn.onclick=()=>{
-      const lang=btn.dataset.lang;
-      localStorage.setItem("lang",lang);
-      applyLang(lang);
-      modal.style.display="none";
-    }
-  });
-});
-
-function applyLang(lang){
-  document.body.dir=lang==="ar"?"rtl":"ltr";
-  document.querySelectorAll("[data-en]").forEach(el=>{
-    el.textContent=lang==="ar"?el.dataset.ar:el.dataset.en;
-  });
-}
 </script>
 </body>
 </html>
