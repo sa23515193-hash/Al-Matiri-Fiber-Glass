@@ -7,16 +7,16 @@
 
 <style>
 
-/* ===== RESET ===== */
+/* ===== GLOBAL ===== */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body{
-  background:#eaf4ff;
+  background:#f4f9ff;
   color:#222;
   line-height:1.6;
 }
@@ -26,7 +26,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 30px;
+  padding:18px 40px;
   background:#0c3c60;
   color:white;
   position:sticky;
@@ -37,20 +37,21 @@ body{
 .brand a{
   color:white;
   text-decoration:none;
+  font-size:20px;
   font-weight:bold;
-  font-size:18px;
 }
 
 .nav-links{
   list-style:none;
   display:flex;
-  gap:20px;
+  gap:25px;
 }
 
 .nav-links a{
   color:white;
   text-decoration:none;
-  transition:0.3s;
+  font-weight:500;
+  transition:.3s;
 }
 
 .nav-links a:hover{
@@ -72,8 +73,8 @@ body{
   flex-wrap:wrap;
   align-items:center;
   justify-content:center;
-  padding:50px 20px;
-  gap:40px;
+  padding:70px 20px;
+  gap:50px;
 }
 
 .hero-text{
@@ -81,18 +82,16 @@ body{
 }
 
 .hero-text h1{
-  font-size:32px;
-  margin-bottom:15px;
+  font-size:34px;
+  margin-bottom:20px;
   color:#0c3c60;
+  text-decoration:underline;
+  text-underline-offset:6px;
 }
 
 .hero-images{
   display:flex;
-  gap:20px;
-}
-
-.owner-img{
-  text-align:center;
+  gap:25px;
 }
 
 .owner-img img{
@@ -107,46 +106,52 @@ body{
 .container{
   max-width:1200px;
   margin:auto;
-  padding:40px 20px;
+  padding:60px 20px;
 }
 
 h2{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:35px;
   color:#0c3c60;
 }
 
 /* ===== GRID ===== */
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
 .product-card{
   background:white;
-  padding:15px;
-  border-radius:12px;
+  padding:20px;
+  border-radius:15px;
   text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
 }
 
 .product-card img{
   width:100%;
-  height:200px;
+  height:220px;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:12px;
 }
 
 .btn{
   display:inline-block;
-  margin-top:20px;
-  padding:10px 20px;
+  margin-top:25px;
+  padding:12px 25px;
   background:#d4af37;
   color:white;
   text-decoration:none;
-  border-radius:6px;
-  transition:0.3s;
+  border-radius:8px;
+  font-weight:bold;
+  transition:.3s;
 }
 
 .btn:hover{
@@ -156,32 +161,38 @@ h2{
 /* ===== ABOUT ===== */
 .about-card{
   background:white;
-  border-radius:12px;
+  padding:40px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-page{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.card{
+  background:white;
   padding:30px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.bullets{
-  margin-top:15px;
-  padding-left:20px;
-}
-
-/* ===== SOCIAL ICONS ===== */
+/* ===== SOCIAL ===== */
 .social-links{
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:35px;
   margin:40px 0;
 }
 
 .social-links a{
   border:2px solid #0c3c60;
-  padding:15px;
+  padding:18px;
   border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:0.3s;
+  transition:.3s;
 }
 
 .social-links a:hover{
@@ -190,7 +201,50 @@ h2{
 
 .social-links img{
   width:30px;
-  height:30px;
+}
+
+/* ===== ORDER FORM ===== */
+.order-section{
+  max-width:800px;
+  margin:50px auto;
+  background:white;
+  padding:40px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group label{
+  font-weight:bold;
+  display:block;
+  margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+.order-btn{
+  width:100%;
+  padding:14px;
+  background:#0c3c60;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.order-btn:hover{
+  background:#082c47;
 }
 
 /* ===== FOOTER ===== */
@@ -198,12 +252,8 @@ h2{
   background:#0c3c60;
   color:white;
   text-align:center;
-  padding:20px;
-}
-
-.site-footer a{
-  color:#d4af37;
-  text-decoration:none;
+  padding:25px;
+  margin-top:50px;
 }
 
 /* ===== MOBILE ===== */
@@ -233,6 +283,9 @@ h2{
     text-align:center;
   }
 
+  .contact-page{
+    grid-template-columns:1fr;
+  }
 }
 
 </style>
@@ -240,63 +293,66 @@ h2{
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="nav">
-  <div class="brand"><a href="#">Al-Mutairi Fiber Glass</a></div>
-  <button class="hamburger">☰</button>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<!-- YOUR ORIGINAL CONTENT STAYS SAME ABOVE HERE -->
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Welcome to Al-Mutairi Fiber Glass</h1>
-    <p>Trusted fiberglass manufacturing company in Jeddah with 25+ years of experience in production, installation and repair.</p>
+<!-- ORDER FORM ADDED BELOW SOCIAL LINKS -->
+
+<section class="order-section">
+  <h2 style="text-align:center;margin-bottom:25px;">Quick Order / Inquiry</h2>
+
+  <div class="form-group">
+    <label>Who you are (Your Email)</label>
+    <input type="email" id="userEmail">
   </div>
 
-  <div class="hero-images">
-    <div class="owner-img">
-      <img src="images/home1.jpg.jpg">
-      <p>Owner</p>
-    </div>
-    <div class="owner-img">
-      <img src="images/home2.jpg.jpg">
-      <p>Owner</p>
-    </div>
+  <div class="form-group">
+    <label>What you want</label>
+    <textarea id="userMessage"></textarea>
   </div>
+
+  <div class="form-group">
+    <label>Where are you from</label>
+    <select id="userCity">
+      <option value="">Select City</option>
+      <option>Jeddah</option>
+      <option>Riyadh</option>
+      <option>Makkah</option>
+      <option>Madinah</option>
+      <option>Dammam</option>
+      <option>Khobar</option>
+      <option>Taif</option>
+      <option>Abha</option>
+      <option>Tabuk</option>
+      <option>Hail</option>
+      <option>Najran</option>
+      <option>Jazan</option>
+    </select>
+  </div>
+
+  <button class="order-btn" onclick="sendOrder()">Confirm Order</button>
 </section>
 
-<!-- ===== SOCIAL MEDIA ===== -->
-<div class="social-links">
-  <a href="https://www.tiktok.com/" target="_blank">
-    <img src="images/tiktok.png">
-  </a>
-
-  <a href="https://facebook.com/" target="_blank">
-    <img src="images/facebook.png">
-  </a>
-</div>
-
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-  <p><strong>Owner:</strong> Ejaz Ahmed</p>
-  <p><strong>Phone:</strong> <a href="tel:0502511885">0502511885</a></p>
-  <p>© 2025 Al-Mutairi Fiber Glass</p>
-</footer>
-
-<!-- ===== SCRIPT ===== -->
 <script>
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+function sendOrder(){
+  const email=document.getElementById("userEmail").value;
+  const message=document.getElementById("userMessage").value;
+  const city=document.getElementById("userCity").value;
 
-hamburger.addEventListener('click',()=>{
-  navLinks.classList.toggle('open');
-});
+  if(email===""||message===""||city===""){
+    alert("Please fill all fields.");
+    return;
+  }
+
+  const subject="New Order from Website";
+  const body=`Customer Email: ${email}
+City: ${city}
+
+Order Details:
+${message}`;
+
+  window.location.href=
+  `mailto:ijazahmedpak87@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 </script>
 
 </body>
