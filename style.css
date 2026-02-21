@@ -3,7 +3,7 @@
   --bg2:#1e293b;
   --bg3:#334155;
   --gold:#e6c76e;
-  --muted:#e5e7eb;
+  --muted: background:linear-gradient(to right, #58573c0a, #cccccc2c);
   --card:rgba(255,255,255,.08);
   --radius:14px;
 }
@@ -12,7 +12,7 @@
 
 body{
   font-family:"Segoe UI",system-ui,sans-serif;
-  background:linear-gradient(to right, #073ebe,#2edddc);
+  background:linear-gradient(to right, #f46751,#3f75eb,#e8dd83,#60f071);
   color:#fff;
 }
 
@@ -24,6 +24,7 @@ body{
   background:rgb(3, 7, 42);
   backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(255,255,255,.1);
+  height:25px;
 }
 
 .brand a{
