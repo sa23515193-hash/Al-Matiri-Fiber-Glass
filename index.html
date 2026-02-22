@@ -497,7 +497,7 @@ h2{
   <p>© 2025 Al-Mutiri Fiber Glass.All rights reserved</p>
 </footer>
 
-  
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
 (function(){
 emailjs.init("OiAORae-KMpwRpKBi"); 
@@ -506,17 +506,17 @@ emailjs.init("OiAORae-KMpwRpKBi");
 function sendEmail(){
 
 emailjs.send("Al-Mutairi Fiber Glass","template_47jzbyf",{
-city: document.getElementById("city").value,
-requirement: document.getElementById("requirement").value,
-email: document.getElementById("email").value
+city: document.getElementById("userCity").value,
+requirement: document.getElementById("userMessage").value,
+email: document.getElementById("userEmail").value
 })
 .then(function(){
 alert("Email Sent Successfully!");
-document.getElementById("city").value="";
-document.getElementById("requirement").value="";
-document.getElementById("email").value="";
+document.getElementById("userCity").value="";
+document.getElementById("userMessage").value="";
+document.getElementById("userEmail").value="";
 }, function(error){
-alert("Error Sending Email");
+alert("Error Sending Email:" + JSON.stringify(error));
 });
 
 }
@@ -529,7 +529,7 @@ alert("Error Sending Email");
       if (e.key === "Escape") btnClose.click();
     }
   });
-});
+
 
 
 // NAVBAR
@@ -539,12 +539,9 @@ const navLinks=document.querySelector(".nav-links");
 hamburger.addEventListener("click",()=>{
   navLinks.classList.toggle("open");
 });
-
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7010149514303209"
+</script>
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7010149514303209"
      crossorigin="anonymous"></script>
 
-
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </body>
 </html>
