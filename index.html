@@ -512,9 +512,7 @@ email: document.getElementById("userEmail").value
 })
 .then(function(){
 alert("Email Sent Successfully!");
-document.getElementById("userCity").value="";
-document.getElementById("userMessage").value="";
-document.getElementById("userEmail").value="";
+
 }, function(error){
 alert("Error Sending Email:" + JSON.stringify(error));
 });
