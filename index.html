@@ -79,10 +79,11 @@
   padding:0;
   box-sizing:border-box;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 body{
-  background:#eaf4ff;
+  background:#98adbd;
   color:#222;
   line-height:1.6;
 }
@@ -101,10 +102,10 @@ body{
 }
 
 .brand a{
-  color:white;
-  text-decoration:none;
+  color:#d4af37;
   font-weight:bold;
-  font-size:18px;
+   text-decoration: double;
+  font-size:26px;
 }
 
 .nav-links{
@@ -190,7 +191,7 @@ h2{
 }
 
 .product-card{
-  background:white;
+  background:rgb(237, 209, 132);
   padding:15px;
   border-radius:12px;
   text-align:center;
@@ -221,7 +222,7 @@ h2{
 
 /* ===== ABOUT ===== */
 .about-card{
-  background:white;
+  backgroun:rgb(237, 209, 132);
   border-radius:12px;
   padding:30px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
@@ -272,6 +273,32 @@ h2{
   text-decoration:none;
 }
 
+  /* ===== MOBILE ===== */
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#0c3c60;
+    position:absolute;
+    top:60px;
+    right:0;
+    width:200px;
+    padding:20px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .gallery-item{
+    height:200px;
+  }
+}
 /* ===== MOBILE ===== */
 @media(max-width:768px){
 
@@ -467,7 +494,7 @@ h2{
   <footer class="site-footer">
   <p><strong>Owner:</strong> Ejaz Ahmed</p>
   <p><strong>Phone:</strong> <a href="tel:0502511885">0502511885</a></p>
-  <p>© 2025 Al-Matiri Fiber Glass.All rights reserved</p>
+  <p>© 2025 Al-Mutiri Fiber Glass.All rights reserved</p>
 </footer>
 
   
