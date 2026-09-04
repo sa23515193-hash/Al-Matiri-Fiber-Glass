@@ -6,6 +6,7 @@ yarn.lock
 # Environment variables
 .env
 .env.local
+.env.*
 .env.*.local
 
 # IDE
@@ -19,7 +20,7 @@ yarn.lock
 .DS_Store
 Thumbs.db
 
-# Build outputs (commented out so dist can be committed for GitHub Pages)
+# Build outputs (keep dist tracked for GitHub Pages)
 # dist/
 
 # Logs
@@ -31,3 +32,5 @@ yarn-error.log*
 
 # Misc
 .cache/
+.vite/
+coverage/
